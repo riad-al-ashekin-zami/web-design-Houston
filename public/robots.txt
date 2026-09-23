@@ -4,4 +4,5 @@ Allow: /
 
 # Sitemaps
 Sitemap: https://peakhoustonwebdesign.us/sitemap.xml
+Sitemap: https://peakhoustonwebdesign.us/sitemap_index.xml
 Sitemap: https://peakhoustonwebdesign.us/sitemap.txt
