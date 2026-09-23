@@ -2,5 +2,6 @@
 User-agent: *
 Allow: /
 
-# Sitemap
+# Sitemaps
 Sitemap: https://peakhoustonwebdesign.us/sitemap.xml
+Sitemap: https://peakhoustonwebdesign.us/sitemap.txt
