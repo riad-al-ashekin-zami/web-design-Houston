@@ -1,0 +1,6 @@
+# robots.txt for Peak SEO & Web Design of Houston
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://peakseowebdesignhouston.com/sitemap.xml
