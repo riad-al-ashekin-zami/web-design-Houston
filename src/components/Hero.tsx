@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useForm, ValidationError } from '@formspree/react';
 import {
   ArrowRight,
   ShieldCheck,
@@ -18,6 +19,8 @@ interface HeroProps {
 }
 
 export const Hero: React.FC<HeroProps> = ({ onExploreServices, formRef }) => {
+  const [state, handleFormspreeSubmit, resetFormspree] = useForm('xbglydbj');
+
   const [formData, setFormData] = useState<LeadFormData>({
     fullName: '',
     businessName: '',
@@ -27,10 +30,6 @@ export const Hero: React.FC<HeroProps> = ({ onExploreServices, formRef }) => {
     serviceNeeded: 'New Website',
     projectDetails: '',
   });
-
-  const [isSubmitted, setIsSubmitted] = useState(false);
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [errorMessage, setErrorMessage] = useState('');
 
   const serviceOptions = [
     'New Website',
@@ -46,28 +45,10 @@ export const Hero: React.FC<HeroProps> = ({ onExploreServices, formRef }) => {
   ) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
-    if (errorMessage) setErrorMessage('');
-  };
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!formData.fullName.trim() || !formData.email.trim()) {
-      setErrorMessage('Please provide your full name and a valid email address.');
-      return;
-    }
-
-    setIsSubmitting(true);
-    setErrorMessage('');
-
-    // Simulate reliable submission
-    setTimeout(() => {
-      setIsSubmitting(false);
-      setIsSubmitted(true);
-    }, 600);
   };
 
   const handleResetForm = () => {
-    setIsSubmitted(false);
+    resetFormspree();
     setFormData({
       fullName: '',
       businessName: '',
@@ -105,7 +86,7 @@ export const Hero: React.FC<HeroProps> = ({ onExploreServices, formRef }) => {
             {/* Eyebrow Badge */}
             <div className="inline-flex items-center gap-2 self-start px-3.5 py-1.5 rounded-full bg-teal-50 border border-teal-200/70 text-teal-800 text-xs font-semibold tracking-wide uppercase mb-6 shadow-2xs">
               <span className="w-2 h-2 rounded-full bg-teal-500 animate-pulse"></span>
-              <span>Houston Web Design & SEO</span>
+              <span>Peak SEO & Web Design of Houston</span>
             </div>
 
             {/* H1 - Exactly one H1 on the page with primary keywords */}
@@ -195,7 +176,7 @@ export const Hero: React.FC<HeroProps> = ({ onExploreServices, formRef }) => {
                 </p>
               </div>
 
-              {isSubmitted ? (
+              {state.succeeded ? (
                 /* Submission Confirmation State */
                 <div
                   id="lead-submission-success-banner"
@@ -209,12 +190,9 @@ export const Hero: React.FC<HeroProps> = ({ onExploreServices, formRef }) => {
                       Quote Request Received!
                     </h3>
                     <p className="text-xs sm:text-sm text-slate-600 mt-1">
-                      Thank you, <span className="font-semibold text-slate-900">{formData.fullName}</span>.
-                      Our Houston web design team is reviewing your requirements for{' '}
-                      <span className="font-semibold text-slate-900">
-                        {formData.businessName || 'your business'}
-                      </span>
-                      . We&apos;ll be in touch shortly.
+                      Thank you{formData.fullName ? `, ${formData.fullName}` : ''}! Your message has been sent directly to our team.
+                      Our Houston web design team is reviewing your requirements
+                      {formData.businessName ? ` for ${formData.businessName}` : ''}. We&apos;ll be in touch shortly.
                     </p>
                   </div>
                   <div className="pt-2">
@@ -228,14 +206,27 @@ export const Hero: React.FC<HeroProps> = ({ onExploreServices, formRef }) => {
                   </div>
                 </div>
               ) : (
-                /* Lead Form */
-                <form id="hero-lead-form" onSubmit={handleSubmit} className="space-y-4">
-                  {errorMessage && (
+                /* Lead Form connected to Formspree */
+                <form
+                  id="hero-lead-form"
+                  action="https://formspree.io/f/xbglydbj"
+                  method="POST"
+                  onSubmit={handleFormspreeSubmit}
+                  className="space-y-4"
+                >
+                  {/* Formspree Subject */}
+                  <input
+                    type="hidden"
+                    name="_subject"
+                    value={`New Houston Website Quote Request - ${formData.fullName || 'Lead'}`}
+                  />
+
+                  {state.errors && (
                     <div
                       id="hero-lead-form-error"
                       className="p-3 rounded-lg bg-rose-50 border border-rose-200 text-xs font-medium text-rose-700"
                     >
-                      {errorMessage}
+                      <ValidationError errors={state.errors} />
                     </div>
                   )}
 
@@ -257,6 +248,12 @@ export const Hero: React.FC<HeroProps> = ({ onExploreServices, formRef }) => {
                         placeholder="Sarah Jenkins"
                         className="w-full px-3 py-2 text-sm rounded-lg border border-slate-300 focus:border-teal-500 focus:ring-2 focus:ring-teal-500/20 outline-hidden transition-all bg-slate-50/50 focus:bg-white text-slate-900 placeholder:text-slate-400"
                       />
+                      <ValidationError
+                        prefix="Full Name"
+                        field="fullName"
+                        errors={state.errors}
+                        className="text-xs text-rose-600 mt-1 font-medium"
+                      />
                     </div>
 
                     <div>
@@ -274,6 +271,12 @@ export const Hero: React.FC<HeroProps> = ({ onExploreServices, formRef }) => {
                         onChange={handleInputChange}
                         placeholder="Houston Dental Spa"
                         className="w-full px-3 py-2 text-sm rounded-lg border border-slate-300 focus:border-teal-500 focus:ring-2 focus:ring-teal-500/20 outline-hidden transition-all bg-slate-50/50 focus:bg-white text-slate-900 placeholder:text-slate-400"
+                      />
+                      <ValidationError
+                        prefix="Business Name"
+                        field="businessName"
+                        errors={state.errors}
+                        className="text-xs text-rose-600 mt-1 font-medium"
                       />
                     </div>
                   </div>
@@ -296,6 +299,12 @@ export const Hero: React.FC<HeroProps> = ({ onExploreServices, formRef }) => {
                         placeholder="sarah@example.com"
                         className="w-full px-3 py-2 text-sm rounded-lg border border-slate-300 focus:border-teal-500 focus:ring-2 focus:ring-teal-500/20 outline-hidden transition-all bg-slate-50/50 focus:bg-white text-slate-900 placeholder:text-slate-400"
                       />
+                      <ValidationError
+                        prefix="Email"
+                        field="email"
+                        errors={state.errors}
+                        className="text-xs text-rose-600 mt-1 font-medium"
+                      />
                     </div>
 
                     <div>
@@ -313,6 +322,12 @@ export const Hero: React.FC<HeroProps> = ({ onExploreServices, formRef }) => {
                         onChange={handleInputChange}
                         placeholder="(713) 555-0100"
                         className="w-full px-3 py-2 text-sm rounded-lg border border-slate-300 focus:border-teal-500 focus:ring-2 focus:ring-teal-500/20 outline-hidden transition-all bg-slate-50/50 focus:bg-white text-slate-900 placeholder:text-slate-400"
+                      />
+                      <ValidationError
+                        prefix="Phone"
+                        field="phone"
+                        errors={state.errors}
+                        className="text-xs text-rose-600 mt-1 font-medium"
                       />
                     </div>
                   </div>
@@ -373,19 +388,25 @@ export const Hero: React.FC<HeroProps> = ({ onExploreServices, formRef }) => {
                       placeholder="Tell us about your business goals, desired timeline, or features you need..."
                       className="w-full px-3 py-2 text-sm rounded-lg border border-slate-300 focus:border-teal-500 focus:ring-2 focus:ring-teal-500/20 outline-hidden transition-all bg-slate-50/50 focus:bg-white text-slate-900 placeholder:text-slate-400 resize-none"
                     ></textarea>
+                    <ValidationError
+                      prefix="Message"
+                      field="projectDetails"
+                      errors={state.errors}
+                      className="text-xs text-rose-600 mt-1 font-medium"
+                    />
                   </div>
 
                   {/* Submit Button */}
                   <button
                     type="submit"
                     id="hero-lead-submit-btn"
-                    disabled={isSubmitting}
+                    disabled={state.submitting}
                     className="w-full inline-flex items-center justify-center gap-2 py-3 px-4 rounded-xl text-sm font-semibold text-white bg-slate-900 hover:bg-slate-800 active:bg-slate-950 transition-all duration-150 shadow-md hover:shadow-lg disabled:opacity-70 cursor-pointer focus:outline-hidden focus-visible:ring-2 focus-visible:ring-teal-500"
                   >
-                    {isSubmitting ? (
+                    {state.submitting ? (
                       <>
                         <span className="w-4 h-4 border-2 border-white/40 border-t-white rounded-full animate-spin"></span>
-                        <span>Preparing Your Quote...</span>
+                        <span>Sending to Formspree...</span>
                       </>
                     ) : (
                       <>

@@ -5,7 +5,7 @@ export const BUSINESS_INFO = {
   shortName: 'Peak SEO & Web Design',
   location: 'Houston, Texas',
   phone: '(713) 555-0198',
-  email: 'hello@peakseowebdesignhouston.com',
+  email: 'hello@peakhoustonwebdesign.us',
   hours: 'Monday – Friday: 8:00 AM – 6:00 PM CST',
   serviceArea: 'Greater Houston Metropolitan Area & Surrounding Texas Communities',
 };

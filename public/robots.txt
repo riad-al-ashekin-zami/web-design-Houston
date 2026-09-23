@@ -3,4 +3,4 @@ User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: https://peakseowebdesignhouston.com/sitemap.xml
+Sitemap: https://peakhoustonwebdesign.us/sitemap.xml
