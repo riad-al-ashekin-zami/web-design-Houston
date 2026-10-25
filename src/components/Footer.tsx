@@ -121,7 +121,7 @@ export const Footer: React.FC<FooterProps> = ({ onQuoteClick }) => {
                 onClick={onQuoteClick}
                 className="w-full py-2.5 px-4 rounded-lg bg-teal-500 hover:bg-teal-400 text-slate-950 font-bold text-xs transition-colors cursor-pointer"
               >
-                Get a Free Quote
+                Get Your Free SEO and Website Quote
               </button>
             </div>
           </div>

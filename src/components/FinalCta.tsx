@@ -49,7 +49,7 @@ export const FinalCta: React.FC<FinalCtaProps> = ({ onQuoteClick }) => {
             onClick={onQuoteClick}
             className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-4 rounded-xl text-sm sm:text-base font-bold text-slate-950 bg-teal-400 hover:bg-teal-300 active:bg-teal-500 shadow-xl transition-all cursor-pointer focus:outline-hidden focus-visible:ring-2 focus-visible:ring-white"
           >
-            <span>Get a Free Quote</span>
+            <span>Get Your Free SEO and Website Quote</span>
             <ArrowRight className="w-4 h-4 text-slate-950" />
           </button>
 

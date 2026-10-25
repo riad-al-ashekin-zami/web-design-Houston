@@ -114,7 +114,7 @@ export const Hero: React.FC<HeroProps> = ({ onExploreServices, formRef }) => {
                 onClick={scrollToHeroForm}
                 className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl text-sm sm:text-base font-semibold text-white bg-slate-900 hover:bg-slate-800 active:bg-slate-950 shadow-md hover:shadow-lg transition-all duration-150 group cursor-pointer focus:outline-hidden focus-visible:ring-2 focus-visible:ring-teal-500"
               >
-                <span>Get a Free Website Quote</span>
+                <span>Get Your Free SEO and Website Quote</span>
                 <ArrowRight className="w-4 h-4 text-teal-400 group-hover:translate-x-1 transition-transform" />
               </button>
 
@@ -166,7 +166,7 @@ export const Hero: React.FC<HeroProps> = ({ onExploreServices, formRef }) => {
               <div className="mb-6">
                 <div className="flex items-center justify-between mb-1.5">
                   <h2 className="text-xl sm:text-2xl font-bold text-slate-900 tracking-tight">
-                    Get Your Free Website Quote
+                    Get Your Free SEO and Website Quote
                   </h2>
                   <span className="inline-flex items-center px-2 py-0.5 rounded text-[11px] font-semibold bg-teal-50 text-teal-700 border border-teal-200/50">
                     Fast Response
@@ -412,7 +412,7 @@ export const Hero: React.FC<HeroProps> = ({ onExploreServices, formRef }) => {
                       </>
                     ) : (
                       <>
-                        <span>Request My Free Quote</span>
+                        <span>Get Your Free SEO and Website Quote</span>
                         <Send className="w-4 h-4 text-teal-400" />
                       </>
                     )}

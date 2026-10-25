@@ -229,9 +229,9 @@ export default function App() {
           <button
             type="button"
             onClick={handleScrollToQuoteForm}
-            className="flex-1 py-2.5 px-3 rounded-xl bg-teal-500 text-slate-950 font-bold text-xs text-center shadow-xs hover:bg-teal-400"
+            className="flex-1 py-2.5 px-2.5 rounded-xl bg-teal-500 text-slate-950 font-bold text-[11px] sm:text-xs text-center shadow-xs hover:bg-teal-400 whitespace-nowrap truncate"
           >
-            Get Free Quote
+            Get Your Free SEO and Website Quote
           </button>
         </div>
       </div>

@@ -185,7 +185,7 @@ export const LocalSeoSection: React.FC<LocalSeoSectionProps> = ({ onQuoteClick }
               <span>Houston Local SEO &amp; Search Authority</span>
             </div>
             <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
-              SEO Services for Single &amp; Multi Location Businesses
+              SEO Services for Single &amp; Multi Location Businesses for Houston
             </h2>
             <p className="mt-1.5 text-xs sm:text-sm text-slate-600 max-w-2xl leading-relaxed">
               Hyper-local ranking signals, Google Maps 3-Pack authority, and full-spectrum search optimization 
