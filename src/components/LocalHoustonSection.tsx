@@ -29,10 +29,10 @@ export const LocalHoustonSection: React.FC<LocalHoustonSectionProps> = ({ onQuot
               Serving Businesses in Houston, Texas
             </h2>
             <p className="mt-4 text-base sm:text-lg text-slate-600 leading-relaxed">
-              Peak SEO &amp; Web Design of Houston partners with local entrepreneurs, established companies,
-              and fast-growing brands across Houston, Texas. We understand the local Texas market dynamics,
-              what Houston consumers expect when searching online, and how to create digital platforms that
-              stand out in our competitive business community.
+              Seeking top-tier SEO Houston results and custom website architecture? Peak SEO &amp; Web Design of
+              Houston partners with local entrepreneurs, established companies, and fast-growing brands across Houston, Texas.
+              As a dedicated local SEO company, our team understands neighborhood search dynamics, delivering high-performance
+              web design Houston businesses rely on to outperform local competitors.
             </p>
 
             {/* Consistent Verified NAP Card (Google Business Profile Alignment) */}

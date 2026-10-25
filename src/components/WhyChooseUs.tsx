@@ -174,16 +174,17 @@ export const WhyChooseUs: React.FC = () => {
           {/* Right Column: Why Peak SEO & Web Design Content */}
           <div className="lg:col-span-6 text-left">
             <span className="text-xs font-bold uppercase tracking-wider text-teal-700 bg-teal-50 px-3 py-1 rounded-md border border-teal-200/60 inline-block mb-3">
-              WHY PEAK SEO & WEB DESIGN
+              WHY PEAK SEO &amp; WEB DESIGN
             </span>
             <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight leading-tight">
               More Than Just a Website
             </h2>
             <p className="mt-4 text-base text-slate-600 leading-relaxed">
-              A high-performing website must do far more than look attractive on a designer&apos;s screen.
-              It must communicate your brand clearly, work flawlessly on mobile, load in the blink of an eye,
-              create an effortless user experience, generate consistent leads, and support search visibility
-              throughout Houston and beyond.
+              A high-performing platform requires more than aesthetic templates. Our unified design SEO
+              framework connects your business directly with an expert website designer and full-scale
+              web development Houston Texas organizations count on. We engineer clean SEO web architecture,
+              ensure touch-friendly mobile usability, and implement rigorous web design SEO best practices that
+              turn qualified local searchers into long-term clients.
             </p>
 
             {/* 4 Feature Items */}

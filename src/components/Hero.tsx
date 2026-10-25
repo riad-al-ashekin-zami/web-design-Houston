@@ -27,16 +27,18 @@ export const Hero: React.FC<HeroProps> = ({ onExploreServices, formRef }) => {
     email: '',
     phone: '',
     websiteUrl: '',
-    serviceNeeded: 'New Website',
+    serviceNeeded: 'Website Design Houston TX',
     projectDetails: '',
   });
 
   const serviceOptions = [
-    'New Website',
-    'Ecommerce Website',
-    'Website Redesign',
-    'Website Maintenance',
-    'SEO',
+    'Website Design Houston TX',
+    'Houston SEO Web Design',
+    'SEO Services Houston Texas',
+    'Website Optimization Help Houston TX',
+    'Web Development and SEO Services',
+    'Web Hosting and SEO Services',
+    'Graphic Design Houston TX',
     'Other',
   ];
 
@@ -55,7 +57,7 @@ export const Hero: React.FC<HeroProps> = ({ onExploreServices, formRef }) => {
       email: '',
       phone: '',
       websiteUrl: '',
-      serviceNeeded: 'New Website',
+      serviceNeeded: 'Website Design Houston TX',
       projectDetails: '',
     });
   };
@@ -86,12 +88,12 @@ export const Hero: React.FC<HeroProps> = ({ onExploreServices, formRef }) => {
             {/* Eyebrow Badge */}
             <div className="inline-flex items-center gap-2 self-start px-3.5 py-1.5 rounded-full bg-teal-50 border border-teal-200/70 text-teal-800 text-xs font-semibold tracking-wide uppercase mb-6 shadow-2xs">
               <span className="w-2 h-2 rounded-full bg-teal-500 animate-pulse"></span>
-              <span>Peak SEO & Web Design of Houston</span>
+              <span>Peak SEO &amp; Web Design • Premier Web Design Agency</span>
             </div>
 
             {/* H1 - Exactly one H1 on the page with primary keywords */}
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[2.75rem] xl:text-5xl font-extrabold text-slate-900 tracking-tight leading-[1.15] mb-6">
-              Website Design & Development in{' '}
+              Best SEO &amp; Website Design in{' '}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-slate-900 via-teal-800 to-teal-600">
                 Houston, TX
               </span>
@@ -99,10 +101,10 @@ export const Hero: React.FC<HeroProps> = ({ onExploreServices, formRef }) => {
 
             {/* Supporting Copy */}
             <p className="text-base sm:text-lg text-slate-600 leading-relaxed mb-8 max-w-2xl">
-              High-performance websites designed for Houston businesses — from custom business
-              websites and ecommerce stores to website redesigns and ongoing website maintenance.
-              We blend sleek modern aesthetics with conversion-first architecture to help Houston
-              companies stand out and turn local search traffic into valuable clients.
+              High-performance web development and seo services engineered for Houston businesses.
+              As a full-service web design seo company and dedicated SEO agency, our specialists deliver premier
+              web design Houston Texas organizations trust, local SEO, website optimization help houston tx,
+              and strategic SEO website design that converts visitors into qualified clients.
             </p>
 
             {/* CTA Buttons */}
@@ -130,19 +132,19 @@ export const Hero: React.FC<HeroProps> = ({ onExploreServices, formRef }) => {
               <div className="flex items-center gap-2">
                 <CheckCircle2 className="w-4 h-4 text-teal-600 shrink-0" />
                 <span className="text-xs sm:text-sm font-medium text-slate-700">
-                  Houston-Based Team
+                  Houston SEO Web Design
                 </span>
               </div>
               <div className="flex items-center gap-2">
                 <CheckCircle2 className="w-4 h-4 text-teal-600 shrink-0" />
                 <span className="text-xs sm:text-sm font-medium text-slate-700">
-                  Mobile-First Architecture
+                  SEO Specialist and Web Design
                 </span>
               </div>
               <div className="flex items-center gap-2 col-span-2 sm:col-span-1">
                 <CheckCircle2 className="w-4 h-4 text-teal-600 shrink-0" />
                 <span className="text-xs sm:text-sm font-medium text-slate-700">
-                  Built for SEO & Conversions
+                  Web Development SEO Services
                 </span>
               </div>
             </div>

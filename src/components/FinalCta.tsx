@@ -54,7 +54,9 @@ export const FinalCta: React.FC<FinalCtaProps> = ({ onQuoteClick }) => {
           </button>
 
           <a
-            href="tel:7135550198"
+            href="https://wa.me/8801913241973"
+            target="_blank"
+            rel="noopener noreferrer"
             className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-4 rounded-xl text-sm sm:text-base font-semibold text-white bg-slate-800 hover:bg-slate-700/80 active:bg-slate-800 border border-slate-700 shadow-sm transition-all focus:outline-hidden focus-visible:ring-2 focus-visible:ring-teal-400"
           >
             <PhoneCall className="w-4 h-4 text-teal-400" />

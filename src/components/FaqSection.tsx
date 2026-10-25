@@ -17,7 +17,7 @@ export const FaqSection: React.FC<FaqSectionProps> = ({ onQuoteClick }) => {
     <section id="faq" className="py-20 sm:py-28 bg-slate-50/60 border-t border-slate-200/80">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="text-center mb-14">
+        <div className="text-left max-w-3xl mb-12">
           <span className="text-xs font-bold uppercase tracking-wider text-teal-700 bg-teal-50 px-3 py-1 rounded-md border border-teal-200/60 inline-block mb-3">
             QUESTIONS & ANSWERS
           </span>

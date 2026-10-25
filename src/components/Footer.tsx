@@ -68,7 +68,12 @@ export const Footer: React.FC<FooterProps> = ({ onQuoteClick }) => {
               </div>
               <div className="flex items-center gap-2">
                 <Phone className="w-3.5 h-3.5 text-teal-400 shrink-0" />
-                <a href="tel:7135550198" className="hover:text-teal-300">
+                <a
+                  href="https://wa.me/8801913241973"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-teal-300"
+                >
                   {BUSINESS_INFO.phone}
                 </a>
               </div>

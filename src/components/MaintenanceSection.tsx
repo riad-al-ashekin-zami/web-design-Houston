@@ -54,16 +54,16 @@ export const MaintenanceSection: React.FC<MaintenanceSectionProps> = ({ onQuoteC
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
+        <div className="text-left max-w-3xl mb-14">
           <span className="text-xs font-bold uppercase tracking-wider text-teal-400 bg-teal-950/80 px-3 py-1 rounded-md border border-teal-800/60 inline-block mb-3">
             ONGOING PROTECTION & SUPPORT
           </span>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
-            Website Maintenance Houston
+            Website Maintenance &amp; Hosting in Houston
           </h2>
           <p className="mt-4 text-base sm:text-lg text-slate-300 leading-relaxed">
-            Your website needs more than a launch. Keep it updated, secure, optimized and ready for your
-            customers with ongoing website maintenance and support provided by Houston professionals.
+            Your website needs more than a launch. Protect your investment with managed web hosting and seo services,
+            continuous security patches, Core Web Vitals performance tuning, and rapid technical support provided by Houston professionals.
           </p>
         </div>
 

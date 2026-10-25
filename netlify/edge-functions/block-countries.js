@@ -1,9 +1,30 @@
 export default async (request, context) => {
+  const url = new URL(request.url);
+
+  // Admin / Preview bypass (via ?preview=1, ?preview=true, ?bypass=1, or ?bypass=true or cookie)
+  const hasBypassParam = url.searchParams.has("preview") || url.searchParams.has("bypass");
+  const hasBypassCookie = (request.headers.get("cookie") || "").includes("geo_bypass=true");
+
+  if (hasBypassParam || hasBypassCookie) {
+    const response = await context.next();
+    response.headers.set("Set-Cookie", "geo_bypass=true; Path=/; Max-Age=86400; SameSite=Lax");
+    return response;
+  }
+
+  // Allow major search engine crawlers for SEO preservation
+  const userAgent = (request.headers.get("user-agent") || "").toLowerCase();
+  const isBot = /googlebot|bingbot|yandex|duckduckbot|baiduspider|slurp|facebookexternalhit|twitterbot|linkedinbot|embedly|quora link preview|pinterest|slackbot/i.test(userAgent);
+  if (isBot) {
+    return context.next();
+  }
+
   // Extract country code from Netlify's Edge Geo context
   const countryCode = (context.geo?.country?.code || "").toUpperCase().trim();
 
-  // Explicitly block India (IN) and Pakistan (PK)
-  if (countryCode === "IN" || countryCode === "PK") {
+  // ONLY allow USA ("US") and Bangladesh ("BD"). Block all other countries worldwide.
+  const ALLOWED_COUNTRIES = ["US", "BD"];
+
+  if (countryCode && !ALLOWED_COUNTRIES.includes(countryCode)) {
     const html = `<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -77,7 +98,7 @@ export default async (request, context) => {
     });
   }
 
-  // All other countries (BD, US, CA, UK, etc.) continue normally
+  // USA and Bangladesh visitors continue normally
   return context.next();
 };
 

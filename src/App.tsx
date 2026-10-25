@@ -1,6 +1,7 @@
 import React, { useRef, useState, useEffect } from 'react';
 import { Header } from './components/Header';
 import { Hero } from './components/Hero';
+import { LocalSeoSection } from './components/LocalSeoSection';
 import { TrustSection } from './components/TrustSection';
 import { ServicesSection } from './components/ServicesSection';
 import { WhyChooseUs } from './components/WhyChooseUs';
@@ -14,14 +15,33 @@ import { FaqSection } from './components/FaqSection';
 import { FinalCta } from './components/FinalCta';
 import { Footer } from './components/Footer';
 
+const ALLOWED_COUNTRIES = ['US', 'BD'];
+const isAllowedCountry = (code?: string | null): boolean => {
+  if (!code) return false;
+  return ALLOWED_COUNTRIES.includes(code.toUpperCase().trim());
+};
+
 export default function App() {
   const formRef = useRef<HTMLDivElement>(null);
   const [isBlocked, setIsBlocked] = useState<boolean>(() => {
     if (typeof window !== 'undefined') {
+      // Local development preview exclusion
+      const hostname = window.location.hostname;
+      if (hostname === 'localhost' || hostname === '127.0.0.1' || hostname === '0.0.0.0') {
+        return false;
+      }
+
+      // Admin or preview bypass
+      const params = new URLSearchParams(window.location.search);
+      if (params.has('preview') || params.has('bypass')) return false;
+      try {
+        if (sessionStorage.getItem('geo_bypass') === 'true') return false;
+      } catch (e) {}
+
       if ((window as any).__IS_GEO_BLOCKED__) return true;
       try {
         const cached = sessionStorage.getItem('geo_country_code');
-        return cached === 'IN' || cached === 'PK';
+        return cached ? !isAllowedCountry(cached) : false;
       } catch (e) {
         return false;
       }
@@ -33,17 +53,34 @@ export default function App() {
     const handleBlockedEvent = () => setIsBlocked(true);
     window.addEventListener('geo-blocked', handleBlockedEvent);
 
-    // Defense-in-depth IP-based geolocation check
     try {
+      // Admin / preview bypass
+      const params = new URLSearchParams(window.location.search);
+      if (params.has('preview') || params.has('bypass') || sessionStorage.getItem('geo_bypass') === 'true') {
+        sessionStorage.setItem('geo_bypass', 'true');
+        return;
+      }
+
+      // Localhost bypass
+      const hostname = window.location.hostname;
+      if (hostname === 'localhost' || hostname === '127.0.0.1' || hostname === '0.0.0.0') {
+        return;
+      }
+
       const cached = sessionStorage.getItem('geo_country_code');
-      if (!cached) {
+      if (cached) {
+        if (!isAllowedCountry(cached)) {
+          setIsBlocked(true);
+        }
+      } else {
+        // Defense-in-depth IP-based geolocation check: only US and BD are allowed
         fetch('https://api.country.is/')
           .then((res) => (res.ok ? res.json() : null))
           .then((data) => {
             if (data?.country) {
               const code = data.country.toUpperCase().trim();
               sessionStorage.setItem('geo_country_code', code);
-              if (code === 'IN' || code === 'PK') {
+              if (!isAllowedCountry(code)) {
                 setIsBlocked(true);
               }
             }
@@ -56,12 +93,25 @@ export default function App() {
                 if (match && match[1]) {
                   const code = match[1].toUpperCase().trim();
                   sessionStorage.setItem('geo_country_code', code);
-                  if (code === 'IN' || code === 'PK') {
+                  if (!isAllowedCountry(code)) {
                     setIsBlocked(true);
                   }
                 }
               })
-              .catch(() => {});
+              .catch(() => {
+                fetch('https://ipwho.is/')
+                  .then((res) => res.json())
+                  .then((data) => {
+                    if (data?.country_code) {
+                      const code = data.country_code.toUpperCase().trim();
+                      sessionStorage.setItem('geo_country_code', code);
+                      if (!isAllowedCountry(code)) {
+                        setIsBlocked(true);
+                      }
+                    }
+                  })
+                  .catch(() => {});
+              });
           });
       }
     } catch (e) {}
@@ -127,7 +177,10 @@ export default function App() {
         {/* 1. Hero Section & Lead Form */}
         <Hero onExploreServices={handleExploreServices} formRef={formRef} />
 
-        {/* 2. Compact Trust / Local Houston Section */}
+        {/* 2. Houston Local SEO Section (Single & Multi-Location, Proximity & 13 SEO Pillars) */}
+        <LocalSeoSection onQuoteClick={handleScrollToQuoteForm} />
+
+        {/* 3. Compact Trust / Local Houston Standards Section */}
         <TrustSection />
 
         {/* 3. Services Section */}
@@ -165,10 +218,13 @@ export default function App() {
       <div className="md:hidden fixed bottom-3 left-3 right-3 z-40">
         <div className="bg-slate-900/95 backdrop-blur-md rounded-2xl p-2.5 shadow-2xl border border-slate-700/80 flex items-center justify-between gap-2">
           <a
-            href="tel:7135550198"
-            className="flex-1 py-2.5 px-3 rounded-xl bg-slate-800 text-white font-semibold text-xs text-center border border-slate-700 hover:bg-slate-750"
+            href="https://wa.me/8801913241973"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Chat on WhatsApp (713) 555-0198"
+            className="flex-1 py-2.5 px-3 rounded-xl bg-slate-800 text-white font-semibold text-xs text-center border border-slate-700 hover:bg-slate-750 transition-colors"
           >
-            Call (713) 555-0198
+            (713) 555-0198
           </a>
           <button
             type="button"

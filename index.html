@@ -4,11 +4,33 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- Country Restriction Guard (IP Geolocation: blocks IN & PK, allows all others) -->
+    <!-- Country Restriction Guard (IP Geolocation: strictly allows USA and Bangladesh, blocks all other countries) -->
     <script>
       (function() {
-        var BLOCKED_COUNTRIES = ['IN', 'PK'];
+        var ALLOWED_COUNTRIES = ['US', 'BD'];
         var STORAGE_KEY = 'geo_country_code';
+
+        function isCountryAllowed(code) {
+          if (!code) return false;
+          return ALLOWED_COUNTRIES.indexOf(code.toUpperCase().trim()) !== -1;
+        }
+
+        // Check preview or bypass parameter (e.g., ?preview=1 or ?bypass=1)
+        var urlParams = new URLSearchParams(window.location.search);
+        if (urlParams.has('preview') || urlParams.has('bypass')) {
+          try { sessionStorage.setItem('geo_bypass', 'true'); } catch (e) {}
+        }
+        try {
+          if (sessionStorage.getItem('geo_bypass') === 'true') {
+            return; // Allowed via developer/admin bypass
+          }
+        } catch (e) {}
+
+        // Localhost development exclusion
+        var hostname = window.location.hostname;
+        if (hostname === 'localhost' || hostname === '127.0.0.1' || hostname === '0.0.0.0') {
+          return;
+        }
 
         function showBlockedScreen() {
           window.__IS_GEO_BLOCKED__ = true;
@@ -35,7 +57,7 @@
 
         try {
           var cached = sessionStorage.getItem(STORAGE_KEY);
-          if (cached && BLOCKED_COUNTRIES.indexOf(cached) !== -1) {
+          if (cached && !isCountryAllowed(cached)) {
             showBlockedScreen();
             return;
           }
@@ -45,7 +67,8 @@
           if (!code) return;
           code = code.toUpperCase().trim();
           try { sessionStorage.setItem(STORAGE_KEY, code); } catch (e) {}
-          if (BLOCKED_COUNTRIES.indexOf(code) !== -1) {
+          // Only USA and Bangladesh are permitted; all other countries are blocked
+          if (!isCountryAllowed(code)) {
             showBlockedScreen();
           }
         }
@@ -73,13 +96,17 @@
           });
       })();
     </script>
-    <title>Web Design Houston TX | Website Design & Ecommerce | Peak SEO</title>
+    <title>Houston Web Design &amp; SEO Company | Website Design Houston TX</title>
     <meta
       name="description"
-      content="Professional website design in Houston, TX. Get modern business websites, ecommerce website design, website redesign and website maintenance for your Houston business."
+      content="Premier Houston web design and SEO company. Custom website design in Houston, TX, local SEO, website optimization help, web development, and website redesigns."
+    />
+    <meta
+      name="keywords"
+      content="website design houston tx, houston seo web design, seo and web design company, website optimization help houston tx, seo specialist and web design, local seo houston, web development and seo services, energy website design, small business web design houston, b2b seo houston"
     />
     <meta name="robots" content="index, follow" />
-    <meta name="author" content="Peak SEO & Web Design of Houston" />
+    <meta name="author" content="Peak SEO &amp; Web Design of Houston" />
     <meta name="geo.region" content="US-TX" />
     <meta name="geo.placename" content="Houston" />
 
@@ -89,20 +116,20 @@
 
     <!-- Open Graph Metadata -->
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="Web Design Houston TX | Website Design & Ecommerce | Peak SEO" />
+    <meta property="og:title" content="Houston Web Design &amp; SEO Company | Website Design Houston TX" />
     <meta
       property="og:description"
-      content="Professional website design in Houston, TX. Get modern business websites, ecommerce website design, website redesign and website maintenance for your Houston business."
+      content="Premier Houston web design and SEO company. Custom website design in Houston, TX, local SEO, website optimization help, web development, and website redesigns."
     />
-    <meta property="og:site_name" content="Peak SEO & Web Design of Houston" />
+    <meta property="og:site_name" content="Peak SEO &amp; Web Design of Houston" />
     <meta property="og:locale" content="en_US" />
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Web Design Houston TX | Website Design & Ecommerce | Peak SEO" />
+    <meta name="twitter:title" content="Houston Web Design &amp; SEO Company | Website Design Houston TX" />
     <meta
       name="twitter:description"
-      content="Professional website design in Houston, TX. Get modern business websites, ecommerce website design, website redesign and website maintenance for your Houston business."
+      content="Premier Houston web design and SEO company. Custom website design in Houston, TX, local SEO, website optimization help, web development, and website redesigns."
     />
 
     <!-- Google Fonts: Plus Jakarta Sans -->
@@ -158,12 +185,20 @@
               }
             ],
             "knowsAbout": [
-              "Web Design Houston",
-              "Houston Website Design",
+              "Website Design Houston TX",
+              "Houston SEO Web Design",
+              "SEO and Web Design Company",
+              "Website Optimization Help Houston TX",
+              "SEO Specialist and Web Design",
+              "Local SEO Houston",
+              "Web Development and SEO Services",
+              "Energy Website Design",
+              "Small Business Web Design Houston",
+              "B2B SEO Houston",
+              "SEO for Doctors Houston",
               "Ecommerce Website Design Houston",
               "Website Redesign Houston",
-              "Website Maintenance Houston",
-              "Local SEO Houston"
+              "Website Maintenance and Hosting Houston"
             ]
           },
           {

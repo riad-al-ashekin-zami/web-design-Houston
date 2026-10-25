@@ -13,99 +13,113 @@ export const BUSINESS_INFO = {
 export const SERVICES: ServiceItem[] = [
   {
     id: 'web-design',
-    title: 'Website Design Houston',
-    eyebrow: 'Custom Web Solutions',
-    keyword: 'website design houston',
+    title: 'Website Design Houston TX',
+    eyebrow: 'Web Design Agency',
+    keyword: 'website design houston tx',
     description:
-      'Tailored, responsive websites built around your business goals, brand identity, and customer conversion paths.',
+      'Custom, responsive websites built by a dedicated Houston website designer and engineering team. We deliver custom web design, conversion-focused UI/UX, and responsive web development Houston Texas businesses rely on.',
     features: [
-      'Custom UI/UX Architecture',
-      'Mobile-First Responsiveness',
-      'Core Web Vitals & Speed',
+      'Custom UI/UX & Responsive Layouts',
+      'Mobile-First Core Web Vitals',
+      'Built-in On-Page SEO Foundations',
     ],
     anchor: 'web-design',
   },
   {
-    id: 'ecommerce',
-    title: 'Ecommerce Website Design Houston',
-    eyebrow: 'Online Stores',
-    keyword: 'ecommerce website design houston',
+    id: 'seo',
+    title: 'Houston SEO Web Design',
+    eyebrow: 'SEO Specialist and Web Design',
+    keyword: 'houston seo web design',
     description:
-      'Conversion-focused online stores built to provide smooth shopping experiences and secure checkout flows.',
+      'As a dedicated SEO and web design company, our specialists deliver high-impact SEO web design services that rank for competitive Houston keywords and convert search traffic into paying clients.',
     features: [
-      'Frictionless 1-Page Checkout',
-      'Mobile-Optimized Catalog',
-      'Secure Payment Gateways',
+      'Google Business Profile (GBP) & Local SEO',
+      'On-Page SEO & Keyword Architecture',
+      'Structured Schema & Technical SEO Audits',
     ],
-    anchor: 'ecommerce',
+    anchor: 'local-houston',
   },
   {
-    id: 'redesign',
-    title: 'Website Redesign Houston',
-    eyebrow: 'Digital Transformation',
-    keyword: 'website redesign houston',
+    id: 'website-optimization',
+    title: 'Website Optimization Houston TX',
+    eyebrow: 'Website Optimization Help Houston TX',
+    keyword: 'website optimization houston tx',
     description:
-      'Upgrade outdated sites with modern SaaS-level polish, faster loading speeds, and protected search equity.',
+      'Actionable website optimization help Houston TX businesses rely on to boost Core Web Vitals, accelerate load speeds, resolve technical crawl errors, and protect established search equity during site updates.',
     features: [
-      'SEO Equity & 301 Redirects',
-      'Modernized Responsive UI',
-      'Eliminated Usability Bottlenecks',
+      'SEO Equity & 301 Redirect Mapping',
+      'Sub-Second Loading & Vitals Boost',
+      'Eliminated Usability & Conversion Bottlenecks',
     ],
     anchor: 'redesign',
   },
   {
-    id: 'maintenance',
-    title: 'Website Maintenance Houston',
-    eyebrow: 'Support & Security',
-    keyword: 'website maintenance houston',
+    id: 'seo-services',
+    title: 'SEO Services Houston Texas',
+    eyebrow: 'Houston SEO Agency & SEO Company',
+    keyword: 'seo services houston texas',
     description:
-      'Keep your website secure, updated, fast, and trouble-free with ongoing local Houston technical support.',
+      'Full-spectrum SEO services Houston Texas organizations trust to dominate search results. Our Houston SEO company implements hyper-local proximity signals, authoritative citations, and content strategy.',
     features: [
-      'Automated Off-site Backups',
-      'Security Patches & Updates',
-      'Proactive Uptime Monitoring',
+      'Google 3-Pack & Map Pack Domination',
+      'Competitor Keyword & Gap Analysis',
+      'Topical Authority & Content Silos',
+    ],
+    anchor: 'local-houston',
+  },
+  {
+    id: 'web-hosting-seo',
+    title: 'Web Hosting and SEO Services',
+    eyebrow: 'Web Development and SEO Services',
+    keyword: 'web hosting and seo services',
+    description:
+      'Reliable web hosting and SEO services with 99.9% uptime, managed cloud security, daily backups, and continuous web development SEO services to ensure your website performs at peak efficiency.',
+    features: [
+      'Automated Off-site Daily Backups',
+      'Security Patches & Vulnerability Updates',
+      'Continuous Technical SEO Maintenance',
     ],
     anchor: 'maintenance',
   },
   {
-    id: 'seo',
-    title: 'Local SEO & Search Optimization',
-    eyebrow: 'Organic Visibility',
-    keyword: 'local seo houston',
+    id: 'graphic-design',
+    title: 'Graphic Design Houston TX',
+    eyebrow: 'Brand Identity & Visuals',
+    keyword: 'graphic design houston tx',
     description:
-      'Rank higher on Google organic search and Google Maps to consistently capture qualified local Houston customers.',
+      'Elevate your digital presence with professional graphic design Houston TX businesses leverage for brand identity, custom vector logos, marketing collateral, and conversion-focused web graphics.',
     features: [
-      'Google Business Profile (GBP) Optimization',
-      'Local Houston Keyword Rankings',
-      'Structured Schema & Technical SEO',
+      'Brand Identity & Vector Logos',
+      'Custom Web Graphics & Vector Icons',
+      'High-Converting Marketing Collateral',
     ],
-    anchor: 'local-houston',
+    anchor: 'web-design',
   },
 ];
 
 export const TRUST_CARDS: TrustCard[] = [
   {
-    title: 'Houston-Focused',
+    title: 'Houston-Based SEO & Design',
     description:
-      'Rooted right here in Houston, Texas, understanding the local market dynamics and competitive landscape.',
+      'Rooted right here in Houston, Texas, understanding local search behavior, industry competitors, and neighborhood markets.',
     iconName: 'MapPin',
   },
   {
-    title: 'Conversion-Focused',
+    title: 'Conversion-Focused Strategy',
     description:
-      'Every layout, headline, and call-to-action is engineered to convert qualified visitors into paying clients.',
+      'Every layout, headline, and call-to-action is engineered by an expert SEO specialist and web design team to turn qualified searchers into paying clients.',
     iconName: 'TrendingUp',
   },
   {
-    title: 'Mobile-First',
+    title: 'Mobile-First Speed & Vitals',
     description:
-      'Fluid, touch-optimized experiences that perform flawlessly on smartphones, tablets, and desktop displays.',
+      'Touch-optimized, sub-second experiences that ace Google Core Web Vitals across smartphones, tablets, and desktops.',
     iconName: 'Smartphone',
   },
   {
-    title: 'Ongoing Support',
+    title: 'Ongoing Support & Hosting',
     description:
-      'Reliable Houston website maintenance and technical guidance long after your new site goes live.',
+      'Reliable web hosting and SEO services, proactive maintenance, and technical guidance long after your new site goes live.',
     iconName: 'ShieldCheck',
   },
 ];
@@ -113,135 +127,135 @@ export const TRUST_CARDS: TrustCard[] = [
 export const WHY_CHOOSE_FEATURES = [
   {
     number: '01',
-    title: 'Conversion-Focused Design',
+    title: 'Conversion-Focused SEO Website Design',
     description:
-      'We structure user journeys, visual visual cues, and contact forms to turn casual browsers into verified Houston inquiries.',
+      'Our unified design SEO methodology combines visual polish with conversion psychology and keyword architecture to turn casual Houston searchers into verified business inquiries.',
   },
   {
     number: '02',
-    title: 'Mobile-First Experience',
+    title: 'Mobile-First Experience & Speed',
     description:
-      'With over 65% of local Houston searches occurring on mobile devices, our layouts load instantly and navigate effortlessly on phones.',
+      'With over 68% of local Houston searches occurring on mobile devices, our layouts load under 1 second and navigate effortlessly on every phone.',
   },
   {
     number: '03',
-    title: 'SEO-Friendly Foundation',
+    title: 'Built-in Technical SEO & Optimization',
     description:
-      'Built with clean semantic HTML5, schema markup, and rapid loading speeds that search engines prioritize.',
+      'Crafted with clean semantic HTML5, Schema.org local business markup, and Core Web Vitals optimization so search engines index and rank you quickly.',
   },
   {
     number: '04',
-    title: 'Ongoing Website Support',
+    title: 'Dedicated Local Houston Support',
     description:
-      'Your website remains secure, backed up, and updated so you can focus on running your business with peace of mind.',
+      'Your website stays secure, backed up, and updated with ongoing maintenance and local Houston hosting so you can run your business with confidence.',
   },
 ];
 
 export const PROCESS_STEPS: ProcessStep[] = [
   {
     number: '01',
-    title: 'Discovery',
-    description: 'Understand your business, audience, and goals.',
-    deliverables: ['Goals alignment & target audience audit', 'Competitive Houston market analysis', 'Project scope & technical requirements'],
+    title: 'Discovery & SEO Audit',
+    description: 'Understand your business, target Houston audience, and competitive search landscape.',
+    deliverables: ['Houston keyword & competitor audit', 'Audience persona & user journey mapping', 'Project scope & technical requirements'],
   },
   {
     number: '02',
-    title: 'Strategy & Design',
-    description: 'Plan the structure and create the visual direction.',
-    deliverables: ['Information architecture & wireframes', 'Modern interactive design mockups', 'Mobile-responsive layout validation'],
+    title: 'Strategy & Architecture',
+    description: 'Plan the site structure, URL hierarchy, and high-converting visual direction.',
+    deliverables: ['Information architecture & on-page SEO wireframes', 'Interactive modern design mockups', 'Mobile-responsive layout validation'],
   },
   {
     number: '03',
-    title: 'Development',
-    description: 'Build a responsive, fast, and user-friendly website.',
+    title: 'Web Development & Optimization',
+    description: 'Build a responsive, lightning-fast website optimized for search engine ranking.',
     deliverables: ['Clean, modern code implementation', 'Core Web Vitals & speed optimization', 'Lead capture forms & CRM integrations'],
   },
   {
     number: '04',
-    title: 'Launch & Support',
-    description: 'Launch the website and provide ongoing support when needed.',
-    deliverables: ['Pre-launch quality assurance & 301 check', 'DNS cutover & search engine indexing', 'Proactive maintenance & continuous support'],
+    title: 'Launch, Indexing & Support',
+    description: 'Deploy the site, submit sitemaps to Google, and provide ongoing maintenance.',
+    deliverables: ['Pre-launch quality assurance & 301 redirect check', 'Search console indexing & schema validation', 'Proactive maintenance & continuous support'],
   },
 ];
 
 export const WHO_WE_HELP: BusinessType[] = [
   {
-    title: 'Small Businesses',
-    tagline: 'Professional Local Presence',
-    description: 'Houston entrepreneurs who need an established, credible website that turns local searchers into reliable customers.',
+    title: 'Houston Small Businesses',
+    tagline: 'Small Business Web Design Houston',
+    description: 'Local Houston small business owners who need an established, credible website and local SEO that turns searchers into loyal customers.',
     iconName: 'Building2',
   },
   {
-    title: 'Professional Services',
-    tagline: 'Trust & Authority',
-    description: 'Legal practices, medical offices, accounting firms, and consultants requiring polished credibility and client intake.',
-    iconName: 'Briefcase',
-  },
-  {
-    title: 'Local Service Businesses',
-    tagline: 'Inbound Houston Leads',
-    description: 'Contractors, HVAC technicians, electricians, and home service specialists who rely on urgent phone calls and quote forms.',
-    iconName: 'Wrench',
-  },
-  {
-    title: 'Ecommerce Businesses',
-    tagline: 'Frictionless Online Sales',
-    description: 'Retailers and DTC brands seeking modern ecommerce website design in Houston that maximizes conversion rates.',
-    iconName: 'ShoppingBag',
-  },
-  {
-    title: 'Startups & Tech',
-    tagline: 'High-Impact Brand Velocity',
-    description: 'Emerging tech ventures and innovative Houston teams ready to launch with a distinct, SaaS-caliber presentation.',
+    title: 'Energy & Industrial Companies',
+    tagline: 'Energy Website Design',
+    description: 'Houston energy firms, oilfield service providers, and industrial manufacturers needing high-credibility B2B web design and search positioning.',
     iconName: 'Rocket',
   },
   {
-    title: 'Growing Companies',
-    tagline: 'Scalable Digital Infrastructure',
-    description: 'Established Houston enterprises looking to modernize an outdated site and scale their lead generation channels.',
+    title: 'Doctors & Medical Practices',
+    tagline: 'SEO for Doctors & Clinics',
+    description: 'Medical practices, surgeons, dental clinics, and healthcare specialists requiring authoritative patient intake and local medical SEO.',
+    iconName: 'Briefcase',
+  },
+  {
+    title: 'B2B Companies & Enterprise',
+    tagline: 'Houston B2B Web Design',
+    description: 'Commercial service providers, tech startups, and B2B enterprises requiring high-converting inbound funnels and technical SEO.',
     iconName: 'TrendingUp',
+  },
+  {
+    title: 'Lawyers & Insurance Agencies',
+    tagline: 'Attorney SEO & Authority',
+    description: 'Houston law firms and independent insurance agencies seeking to capture high-value search queries and build instant trust.',
+    iconName: 'Wrench',
+  },
+  {
+    title: 'Ecommerce & Retail Brands',
+    tagline: 'Ecommerce Website Design',
+    description: 'Houston retailers and direct-to-consumer brands looking to scale online revenue with frictionless shopping experiences.',
+    iconName: 'ShoppingBag',
   },
 ];
 
 export const FAQS: FaqItem[] = [
   {
-    question: 'What does website design in Houston include?',
+    question: 'Why hire a combined SEO and web design company in Houston?',
     answer:
-      'Our Houston website design projects include comprehensive custom UI/UX design, mobile-first responsive coding, speed and Core Web Vitals optimization, clean on-page SEO structure, lead-generation forms, and full launch configuration with search engine indexing.',
+      'Hiring an agency that specializes as an integrated SEO and web design company ensures your website is engineered from day one with proper keyword structure, clean semantic markup, fast loading speeds, and mobile responsiveness. As a dedicated web design SEO company, our combined Houston SEO and web design approach builds organic search visibility directly into the foundation.',
   },
   {
-    question: 'How much does a website design project cost?',
+    question: 'How can website optimization help Houston TX businesses?',
     answer:
-      'Website design project costs depend directly on scope, page count, and specific functional requirements—such as custom business sites, complex ecommerce platforms, or custom integrations. We provide transparent, itemized quotes with no hidden fees following an initial discovery consultation.',
+      'Professional website optimization help Houston TX businesses rely on centers around Core Web Vitals speed, on-page keyword relevance, and conversion rate optimization. Optimizing these factors lowers bounce rates, boosts Google ranking positions for local Houston searches, and increases the percentage of site visitors who convert into paying clients.',
   },
   {
-    question: 'Do you offer ecommerce website design in Houston?',
+    question: 'What do your web development and SEO services include?',
     answer:
-      'Yes, we provide specialized ecommerce website design in Houston. We build fast, secure online stores on modern platforms with seamless payment gateways, automated inventory management, mobile-optimized checkout funnels, and conversion-focused product merchandising.',
+      'Our end-to-end web development and SEO services include custom UI/UX design, mobile-responsive frontend development, Core Web Vitals speed tuning, clean on-page SEO architecture, lead-generation forms, and full search engine indexing configured for Houston, Texas.',
   },
   {
-    question: 'Can you redesign my existing website?',
+    question: 'Do you offer managed web hosting and SEO services in Houston?',
     answer:
-      'Absolutely. Our website redesign Houston service transforms dated or sluggish websites into high-performing digital assets. We preserve existing SEO authority through meticulous 301 redirect mapping while overhauling the visual design, speed, and mobile responsiveness.',
+      'Yes, our integrated web hosting and SEO services keep your website secure, updated, and fast. Plans include daily cloud backups, core and plugin security patches, SSL renewal, uptime tracking, and priority technical assistance.',
   },
   {
-    question: 'Do you provide website maintenance in Houston?',
+    question: 'Do you provide graphic design Houston TX businesses can bundle with web design?',
     answer:
-      'Yes, our ongoing website maintenance Houston plans ensure your site remains secure, updated, fast, and trouble-free. Plans include regular cloud backups, core software and plugin updates, SSL monitoring, uptime tracking, and priority technical assistance.',
+      'Yes, we provide full-suite graphic design Houston TX companies count on for vector logos, custom branding guides, marketing flyers, and bespoke digital illustrations that align seamlessly with your newly designed website.',
   },
   {
-    question: 'Can you help with SEO after the website launch?',
+    question: 'What does website design in Houston TX include?',
     answer:
-      'Every website we engineer comes pre-configured with technical SEO best practices, structured schema markup, and clean semantic code. We also offer continuous local Houston SEO support to help your business build visibility on Google Maps and organic search results.',
+      'Our Houston website design packages include custom UI/UX design, mobile-responsive development, speed and Core Web Vitals optimization, clean on-page SEO structure, lead-generation forms, and full launch configuration with search engine indexing.',
   },
   {
-    question: 'How long does a website redesign take?',
+    question: 'Can you redesign my existing website without losing search rankings?',
     answer:
-      'A typical website redesign project takes between 3 to 6 weeks from initial kickoff to public deployment, depending on content availability, custom feature requirements, and client review feedback. We define clear milestones so you know what to expect at every phase.',
+      'Yes, preserving your established search rankings is our highest priority during a website redesign. We perform complete URL inventory audits, maintain heading hierarchies, and implement 1-to-1 301 redirects so your accumulated search authority and backlinks seamlessly transfer to your new, modernized site.',
   },
   {
-    question: 'Do you work with small businesses in Houston?',
+    question: 'Why partner with an expert SEO specialist and web design team?',
     answer:
-      'Yes, a substantial portion of our clients are Houston small businesses and local service providers. We tailor our website design solutions to deliver maximum return on investment for growing local companies without unnecessary overhead.',
+      'Working with a seasoned SEO specialist and web design partner guarantees that your website is built from the ground up for commercial search intent. Instead of designing a site that looks pretty but cannot be found on Google, we ensure every heading, page silo, and metadata element targets high-value local search traffic.',
   },
 ];

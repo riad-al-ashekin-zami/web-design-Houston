@@ -38,7 +38,7 @@ export const WhoWeHelp: React.FC<WhoWeHelpProps> = ({ onQuoteClick }) => {
     <section id="who-we-help" className="py-20 sm:py-28 bg-slate-50/70 border-t border-slate-200/80">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
+        <div className="text-left max-w-3xl mb-14">
           <span className="text-xs font-bold uppercase tracking-wider text-teal-700 bg-teal-50 px-3 py-1 rounded-md border border-teal-200/60 inline-block mb-3">
             TAILORED INDUSTRY EXPERTISE
           </span>

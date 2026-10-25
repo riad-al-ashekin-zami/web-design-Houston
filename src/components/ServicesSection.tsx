@@ -1,12 +1,13 @@
 import React from 'react';
 import {
   Layout,
-  ShoppingBag,
   RefreshCw,
   Wrench,
   Search,
   ArrowRight,
   CheckCircle2,
+  Palette,
+  TrendingUp,
 } from 'lucide-react';
 import { SERVICES } from '../data/content';
 
@@ -19,14 +20,16 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onSelectServic
     switch (id) {
       case 'web-design':
         return <Layout className="w-5 h-5 text-teal-600 stroke-[2]" />;
-      case 'ecommerce':
-        return <ShoppingBag className="w-5 h-5 text-teal-600 stroke-[2]" />;
-      case 'redesign':
-        return <RefreshCw className="w-5 h-5 text-teal-600 stroke-[2]" />;
-      case 'maintenance':
-        return <Wrench className="w-5 h-5 text-teal-600 stroke-[2]" />;
       case 'seo':
         return <Search className="w-5 h-5 text-teal-600 stroke-[2]" />;
+      case 'website-optimization':
+        return <RefreshCw className="w-5 h-5 text-teal-600 stroke-[2]" />;
+      case 'seo-services':
+        return <TrendingUp className="w-5 h-5 text-teal-600 stroke-[2]" />;
+      case 'web-hosting-seo':
+        return <Wrench className="w-5 h-5 text-teal-600 stroke-[2]" />;
+      case 'graphic-design':
+        return <Palette className="w-5 h-5 text-teal-600 stroke-[2]" />;
       default:
         return <Layout className="w-5 h-5 text-teal-600 stroke-[2]" />;
     }
@@ -51,15 +54,15 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onSelectServic
             OUR CORE EXPERTISE
           </span>
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-900 tracking-tight">
-            Web Design Services in Houston
+            Web Design &amp; SEO Services in Houston
           </h2>
           <p className="mt-3 text-sm sm:text-base text-slate-600 leading-relaxed">
-            High-performance websites, custom ecommerce stores, redesigns, proactive maintenance, and
-            local Houston SEO to help your business win online.
+            High-performance websites, custom graphic design, search optimization, proactive maintenance, and
+            local Houston SEO engineered to help your Texas business win online.
           </p>
         </div>
 
-        {/* Compact, Sleek 5-Service Grid */}
+        {/* Compact, Sleek 6-Service Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
           {SERVICES.map((service, index) => (
             <div
@@ -118,38 +121,37 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onSelectServic
               </div>
             </div>
           ))}
+        </div>
 
-          {/* Quick Consultation Booster Card to complete the 6-slot balanced grid */}
-          <div className="rounded-xl bg-gradient-to-br from-slate-900 via-slate-850 to-slate-800 text-white p-5 sm:p-6 border border-slate-700/80 shadow-2xs flex flex-col justify-between">
-            <div>
-              <span className="text-[10px] font-bold uppercase tracking-widest text-teal-400 bg-slate-800/90 px-2 py-0.5 rounded border border-slate-700 inline-block mb-3">
-                CUSTOM SCOPE
-              </span>
-              <h3 className="text-base sm:text-lg font-bold text-white mb-2">
-                Need a Custom Houston Package?
-              </h3>
-              <p className="text-xs sm:text-sm text-slate-300 leading-relaxed mb-4">
-                We combine web design, ecommerce development, and ongoing local SEO into a unified,
-                cost-effective plan tailored to your business.
-              </p>
-            </div>
-
-            <div className="pt-3 border-t border-slate-700/70">
-              <button
-                type="button"
-                onClick={() => {
-                  const form = document.getElementById('quote-form-container');
-                  if (form) {
-                    form.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                  }
-                }}
-                className="w-full inline-flex items-center justify-center gap-1.5 py-2.5 px-3 rounded-lg bg-teal-400 hover:bg-teal-300 text-slate-950 font-bold text-xs transition-colors cursor-pointer"
-              >
-                <span>Request Custom Quote</span>
-                <ArrowRight className="w-3.5 h-3.5" />
-              </button>
-            </div>
+        {/* Custom Consultation Banner */}
+        <div className="mt-8 rounded-2xl bg-gradient-to-r from-slate-900 via-slate-850 to-slate-800 text-white p-6 sm:p-7 border border-slate-700/80 shadow-md flex flex-col md:flex-row items-center justify-between gap-6">
+          <div className="max-w-2xl">
+            <span className="text-[10px] font-bold uppercase tracking-widest text-teal-400 bg-slate-800/90 px-2.5 py-0.5 rounded border border-slate-700 inline-block mb-2">
+              CUSTOM DIGITAL SCOPE
+            </span>
+            <h3 className="text-lg sm:text-xl font-bold text-white">
+              Need a Tailored Houston SEO &amp; Web Design Package?
+            </h3>
+            <p className="text-xs sm:text-sm text-slate-300 mt-1 leading-relaxed">
+              We combine custom web design, conversion optimization, graphic branding, and full local Houston SEO into a unified, transparent scope built around your target revenue milestones.
+            </p>
           </div>
+
+          <button
+            type="button"
+            onClick={() => {
+              const form = document.getElementById('quote-form-container');
+              if (form) {
+                form.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                const firstInput = form.querySelector('input');
+                if (firstInput) firstInput.focus();
+              }
+            }}
+            className="w-full md:w-auto inline-flex items-center justify-center gap-2 py-3 px-5 rounded-xl bg-teal-400 hover:bg-teal-300 text-slate-950 font-bold text-xs sm:text-sm transition-all shadow-xs shrink-0 cursor-pointer"
+          >
+            <span>Request Custom Scope</span>
+            <ArrowRight className="w-4 h-4 text-slate-950" />
+          </button>
         </div>
       </div>
     </section>
