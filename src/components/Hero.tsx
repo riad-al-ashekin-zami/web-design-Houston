@@ -112,10 +112,10 @@ export const Hero: React.FC<HeroProps> = ({ onExploreServices, formRef }) => {
               <button
                 id="hero-primary-quote-cta"
                 onClick={scrollToHeroForm}
-                className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl text-sm sm:text-base font-semibold text-white bg-slate-900 hover:bg-slate-800 active:bg-slate-950 shadow-md hover:shadow-lg transition-all duration-150 group cursor-pointer focus:outline-hidden focus-visible:ring-2 focus-visible:ring-teal-500"
+                className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl text-sm sm:text-base font-bold text-white bg-gradient-to-r from-teal-600 via-emerald-600 to-teal-700 hover:from-teal-500 hover:to-emerald-500 active:from-teal-700 active:to-emerald-700 shadow-md shadow-teal-700/25 hover:shadow-lg hover:shadow-teal-600/35 transition-all duration-150 group cursor-pointer focus:outline-hidden focus-visible:ring-2 focus-visible:ring-teal-500"
               >
                 <span>Get Your Free SEO and Website Quote</span>
-                <ArrowRight className="w-4 h-4 text-teal-400 group-hover:translate-x-1 transition-transform" />
+                <ArrowRight className="w-4 h-4 text-teal-200 group-hover:translate-x-1 transition-transform" />
               </button>
 
               <button
@@ -403,7 +403,7 @@ export const Hero: React.FC<HeroProps> = ({ onExploreServices, formRef }) => {
                     type="submit"
                     id="hero-lead-submit-btn"
                     disabled={state.submitting}
-                    className="w-full inline-flex items-center justify-center gap-2 py-3 px-4 rounded-xl text-sm font-semibold text-white bg-slate-900 hover:bg-slate-800 active:bg-slate-950 transition-all duration-150 shadow-md hover:shadow-lg disabled:opacity-70 cursor-pointer focus:outline-hidden focus-visible:ring-2 focus-visible:ring-teal-500"
+                    className="w-full inline-flex items-center justify-center gap-2 py-3 px-4 rounded-xl text-sm font-bold text-white bg-gradient-to-r from-teal-600 via-emerald-600 to-teal-700 hover:from-teal-500 hover:to-emerald-500 active:from-teal-700 active:to-emerald-700 transition-all duration-150 shadow-md shadow-teal-600/30 hover:shadow-lg hover:shadow-teal-600/40 disabled:opacity-70 cursor-pointer focus:outline-hidden focus-visible:ring-2 focus-visible:ring-teal-500"
                   >
                     {state.submitting ? (
                       <>
@@ -413,7 +413,7 @@ export const Hero: React.FC<HeroProps> = ({ onExploreServices, formRef }) => {
                     ) : (
                       <>
                         <span>Get Your Free SEO and Website Quote</span>
-                        <Send className="w-4 h-4 text-teal-400" />
+                        <Send className="w-4 h-4 text-white" />
                       </>
                     )}
                   </button>
